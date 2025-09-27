@@ -2,7 +2,7 @@
 #include <unordered_map>
 using namespace std;
 
-unordered_map<char, int> map = {{'I', 1}, {'V', 5}, {'X', 10}, {'L', 50}, {'C', 100}, {'D', 500}, {'M', 1000}};
+unordered_map<char, int> ROMAN = {{'I', 1}, {'V', 5}, {'X', 10}, {'L', 50}, {'C', 100}, {'D', 500}, {'M', 1000}};
 
 class Solution
 {
@@ -90,15 +90,15 @@ class Solution
         {
             char c1 = s[i];
             char c2 = s[i + 1];
-            if (map[c1] < map[c2])
+            if (ROMAN[c1] < ROMAN[c2])
             {
-                res -= map[c1];
+                res -= ROMAN[c1];
             }
             else
             {
-                res += map[c1];
+                res += ROMAN[c1];
             }
         }
-        return res + map[s.back()];
+        return res + ROMAN[s.back()];
     }
 };
